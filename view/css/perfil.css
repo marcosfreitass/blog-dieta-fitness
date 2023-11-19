@@ -1,0 +1,233 @@
+:root {
+    --main-color: #000000;
+    --primary: #f0fff7;
+    --black: #141414;
+    --white: #fff;
+    --bg: #f2f2f2;
+    --light-black: #666;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    transition: .2s linear;
+}
+
+/* O body abaixo se refere a área body do html, então ai está aplicando a estilização em tudo. */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url(../img/imagem_de_fundo.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+
+section {
+    padding: 3rem 9%;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: var(--primary);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+}
+
+.header .logo {
+    font-size: 2.2rem;
+    font-weight: bolder;
+    color: var(--main-color);
+}
+
+.header .navbar a {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-left: 2rem;
+    color: var(--black);
+}
+
+.header .navbar a:hover {
+    color: var(--main-color);
+    border-bottom: 4px solid black;
+}
+
+.header .navbar .input {
+    background: var(--main-color);
+    margin-left: 2rem;
+    padding: 1rem;
+    border: 2px solid var(--main-color);
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.header .navbar .input:hover {
+    padding: 9px;
+    color: var(--main-color);
+    background: var(--primary);
+}
+
+#menu {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--main-color);
+    display: none;
+}
+
+/* O comando abaixo background-color é o rgba, onde consigo por transparência que varia de 0 a 1, onde 1 é 100% opaco;
+   O position absolute faz com que o background ocupe apenas no espaço em que os elementos estão;
+   O top, left e transform translate são para centralizar a div da maneira correta; 
+   O color se refere a cor do texto */
+
+/* O comando padding é responsável por definir uma distância interna entre um elemento e sua borda, enquanto o border-radius é para arredondar as bordas */
+
+.tela-login {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    border-radius: 10px;
+    color: black;
+    width: 60%;
+    min-width: 400px;
+}
+
+.tela-login h1 {
+    font-size: 2rem;
+}
+
+/*  */
+
+.login,
+.cpf {
+    padding: 14px;
+    border: 1px solid black;
+    outline: none;
+    font-size: 1.8rem;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 8px;
+    min-width: 300px;
+}
+
+.button {
+    background-color: dodgerblue;
+    border: none;
+    padding: 12px 4px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+form:last-child .button {
+    margin-top: 6px;
+}
+
+.button:hover {
+    background-color: deepskyblue;
+}
+
+.tela-login h1 {
+    text-align: center;
+}
+
+main div img {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+@media(max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem 3rem;
+    }
+
+    section {
+        padding: 3rem 5rem;
+    }
+
+}
+
+@media(max-width:768px) {
+    .header #menu {
+        display: inline-block;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        border-top: .1rem solid #aaa;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+
+    .header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a {
+        display: block;
+        margin: 2rem;
+        color: var(--light-black);
+    }
+
+}
+
+@media(max-width:500px) {
+    html {
+        font-size: 50%;
+    }
+
+    footer .newsletter .content {
+        max-width: 100%;
+    }
+
+}
